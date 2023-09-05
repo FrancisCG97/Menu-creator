@@ -1,42 +1,91 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* -----------------ROOT----------------- */
+
+/* -----------------HOME----------------- */
+:root {
+  width: 100vw;
+  height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #D4E2B6;
+  margin: 0%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+  margin: 0%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+
+/* -----------------HEADER----------------- */
+nav {
+  background-color: #D4E2B6;
+  display: flex;
+  justify-content: center;
 }
 
-.card {
-  padding: 2em;
+#header {
+  width: 100vw;
+  margin: 0%;
+  padding: 0%;
 }
 
-.read-the-docs {
-  color: #888;
+#header-container {
+  width: 100vw;
+  margin: 0%;
+  padding: 0%;
+  background-color: #D4E2B6;
+  display: flex;
+  justify-content: center;
+}
+
+#nav-container {
+  width: 100vw;
+  padding: 0%;
+}
+
+#title {
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 350%;
+  font-weight: bold;
+  color: #539FA2;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+
+
+/* -----------------LOGIN----------------- */
+.form-control {
+  background-color: #F0F6E7;
+  stroke: #539FA2;
+}
+
+#login-container {
+  background-color: #D4E2B6;
+  display: flex;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 250%;
+  font-weight: bold;
+  color: #539FA2;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+}
+
+#info-inputs {
+  width: 100%;
+  background-color: #D4E2B6;
+}
+
+#inputs {
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
