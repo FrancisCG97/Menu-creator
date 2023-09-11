@@ -1,9 +1,8 @@
 /* -----------------ROOT----------------- */
-
-/* -----------------HOME----------------- */
 :root {
   width: 100vw;
   height: 100vh;
+  margin: 0%;
 }
 
 body {
@@ -13,14 +12,11 @@ body {
   margin: 0%;
 }
 
-.row {
-  margin: 0%;
-}
 
+/* -----------------HOME----------------- */
 
 /* -----------------HEADER----------------- */
 nav {
-  background-color: #D4E2B6;
   display: flex;
   justify-content: center;
 }
@@ -35,7 +31,6 @@ nav {
   width: 100vw;
   margin: 0%;
   padding: 0%;
-  background-color: #D4E2B6;
   display: flex;
   justify-content: center;
 }
@@ -46,46 +41,116 @@ nav {
 }
 
 #title {
-  margin: 0%;
+  width: 100%;
+  margin: 10px 0px;
   padding: 0%;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 350%;
+  font-size: 320%;
   font-weight: bold;
   color: #539FA2;
   -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
+  display: flex;
+  justify-content: center;
 }
 
 
 /* -----------------LOGIN----------------- */
-.form-control {
-  background-color: #F0F6E7;
-  stroke: #539FA2;
+img {
+  width: 35px;
+  height: auto;
 }
 
 #login-container {
-  background-color: #D4E2B6;
   display: flex;
   justify-content: center;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 250%;
+  font-size: 220%;
   font-weight: bold;
   color: #539FA2;
-  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
 }
 
 #info-inputs {
   width: 100%;
-  background-color: #D4E2B6;
+  margin: 5px 0px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
-#inputs {
-  margin: 0%;
-  padding: 0%;
+#email,
+#password {
+  margin-bottom: 15px;
+  background-color: #F0F6E7;
+  border-radius: 5px;
+  border: 2px solid #539FA2;
+}
+
+#log-btns {
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
 }
+
+#logInWithGoogle {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+#logInWithEmail,
+#logInWithGoogle {
+  width: 100%;
+  margin: 0px 14px 20px 14px;
+  padding: 0%;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: #F0F6E7;
+  border-radius: 5px;
+  border: 2px solid #539FA2;
+}
+
+
+/* -----------------REGISTER----------------- */
+h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+#register-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  color: #539FA2;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+#register-email,
+#register-google {
+  width: 100%;
+  padding: 0%;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: #F0F6E7;
+  border-radius: 5px;
+  border: 2px solid #539FA2;
+  color: #539FA2;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+
+
+
+
+
