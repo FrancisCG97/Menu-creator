@@ -7,10 +7,10 @@ import {
   RouterProvider
 } from "react-router-dom";
 import Home from './Home.jsx'
-import Register from './RegisterPage.jsx';
 import Wall from './Wall.jsx';
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css';
+import RegisterPage from "./RegisterPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/RegisterPage",
-    element: <Register />,
+    element: <RegisterPage />,
   },
   {
     path: "/Wall",

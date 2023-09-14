@@ -1,6 +1,5 @@
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-// import { logInWithEmail } from "../lib/auth";
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../lib/firebase';
 import { useState } from "react";
@@ -9,9 +8,6 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
 
     const navigate = useNavigate();
-    const registerWithEmail = () => {
-        navigate('/RegisterPage');
-    };
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,7 +18,7 @@ const Login = () => {
             .then((userCredential) => {
                 // Signed in
                 const user = userCredential.user;
-                navigate("/home")
+                navigate("/Wall")
                 console.log(user);
             })
             .catch((error) => {
@@ -31,6 +27,11 @@ const Login = () => {
                 console.log(errorCode, errorMessage)
             });
     }
+
+    const registerUser = () => {
+        navigate("/RegisterPage");
+    };
+
 
     return (
         <>
@@ -50,7 +51,7 @@ const Login = () => {
 
                 <div id="log-btns" className="col-11 col-sm-11 col-md-6 col-lg-5 col-xl-4">
                     <button id="logInWithEmail" className="btn" type="submit" onClick={onLogin} > Iniciar sesión </button>
-                    <button id="logInWithGoogle" className="btn" type="submit"><img src="src/Images/logo-google.png"></img>Iniciar sesión con Google </button>
+                    <button id="logInWithGoogle" className="btn" type="submit"><img src="src/Images/logo-google.png"></img> Iniciar sesión con Google </button>
                 </div>
             </form>
 
@@ -58,9 +59,7 @@ const Login = () => {
                 <div className="col-10 col-sm-10 col-md-6 col-lg-5 col-xl-5">
                     <br></br>
                     <h1> ¿No tienes cuenta? </h1>
-                    <h1> ¡Regístrate! </h1>
-                    <button id="register-email" className="btn" type="submit" onClick={() => registerWithEmail}> Registrarme con correo </button>
-                    <button id="register-google" className="btn" type="submit"> Registrarme con Google </button>
+                    <button id="register" className="btn" onClick={() => registerUser()}> ¡Regístrate! </button>
                 </div>
             </div>
         </>

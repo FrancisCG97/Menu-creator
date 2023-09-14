@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100vh;
   margin: 0%;
+  background-color: #D4E2B6;
 }
 
 body {
@@ -33,6 +34,7 @@ nav {
   padding: 0%;
   display: flex;
   justify-content: center;
+  background-color: #D4E2B6;
 }
 
 #nav-container {
@@ -42,10 +44,10 @@ nav {
 
 #title {
   width: 100%;
-  margin: 10px 0px;
+  margin: 0%;
   padding: 0%;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 320%;
+  font-size: 350%;
   font-weight: bold;
   color: #539FA2;
   -webkit-text-stroke-width: 1.5px;
@@ -57,7 +59,7 @@ nav {
 
 /* -----------------LOGIN----------------- */
 img {
-  width: 35px;
+  width: 25px;
   height: auto;
 }
 
@@ -65,34 +67,35 @@ img {
   display: flex;
   justify-content: center;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 220%;
+  font-size: 250%;
   font-weight: bold;
   color: #539FA2;
-  -webkit-text-stroke-width: 1px;
+  background-color: #D4E2B6;
+  -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
 }
 
 #info-inputs {
   width: 100%;
-  margin: 5px 0px;
   font-size: 18px;
   font-weight: 600;
   display: flex;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
+  background-color: #D4E2B6;
 }
 
 #email,
 #password {
-  margin-bottom: 15px;
   background-color: #F0F6E7;
   border-radius: 5px;
   border: 2px solid #539FA2;
 }
 
 #log-btns {
-  margin-top: 10px;
+  margin-top: 40px;
+  padding: 0px 15px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -108,9 +111,9 @@ img {
 #logInWithEmail,
 #logInWithGoogle {
   width: 100%;
-  margin: 0px 14px 20px 14px;
-  padding: 0%;
-  font-size: 15px;
+  margin: 10px 5px;
+  padding: 0px 2px;
+  font-size: 17px;
   font-weight: 600;
   background-color: #F0F6E7;
   border-radius: 5px;
@@ -118,39 +121,56 @@ img {
 }
 
 
-/* -----------------REGISTER----------------- */
+/* -----------------HOME REGISTER----------------- */
 h1 {
   font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 250%;
   display: flex;
   justify-content: center;
 }
 
 #register-container {
-  margin-top: 10px;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  background-color: #D4E2B6;
   color: #539FA2;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
 }
 
-#register-email,
-#register-google {
+#register {
   width: 100%;
   padding: 0%;
-  margin-top: 10px;
-  font-size: 20px;
-  font-weight: 700;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 600;
   background-color: #F0F6E7;
   border-radius: 5px;
   border: 2px solid #539FA2;
   color: #539FA2;
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 1.5px;
   -webkit-text-stroke-color: black;
 }
 
+/* #register-email,
+#register-google {
+  width: 100%;
+  margin: 10px 5px;
+  padding: 2px;
+  font-size: 17px;
+  font-weight: 300;
+  background-color: #F0F6E7;
+  border-radius: 5px;
+  border: 2px solid #539FA2; 
+}*/
 
 
+/* -----------------REGISTER----------------- */
+#reg-container {
+  font-size: 50px;
+  font-weight: 600;
+}
 
 
 
