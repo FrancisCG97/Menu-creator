@@ -1,18 +1,59 @@
 /* eslint-disable no-unused-vars */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import { ToastContainer, toast } from 'react-toastify';
 import React from 'react';
-import { regWithEmail } from "../lib/auth";
-import { accessGoogle } from "../lib/auth";
-import { logWithEmail } from "../lib/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 
-const Register = () => {
 
-    // const resultado = miFuncion('Hola desde MiComponente');
+export default function Register() {
+
+    const auth = getAuth();
+
+    const newAccount = (email, password) => {
+
+        const emailInput = document.getElementById('email').value;
+        const passInput = document.getElementById('password').value;
+
+        if (emailInput.length === 0 && passInput.length === 0) {
+            toast.error('Ingrese un correo electrónico y contraseña');
+        } else if (emailInput.length === 0) {
+            toast.error('Ingrese un correo electrónico');
+        } else if (passInput.length === 0) {
+            toast.error('Ingrese una contraseña');
+        } else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailInput)) {
+            toast.error('Ingrese un correo electrónico válido');
+        } else {
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in 
+                    const user = userCredential.user;
+                    // ...
+                    console.log(user);
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    if (errorCode === 'auth/email-already-in-use') {
+                        toast.error('El correo ya está en uso.');
+                    } else if (errorCode === 'auth/invalid-password') {
+                        toast.error('La contraseña debe tener al menos 6 caracteres');
+                    } else {
+                        toast.error('Ocurrió un error durante el registro.');
+                    }
+                    // ..
+                });
+        }
+    }
 
     return (
         <>
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                closeOnClick
+                theme="dark"
+            />
             <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div id="reg-container" className="container">
                     <p> Registrarse </p>
@@ -25,7 +66,7 @@ const Register = () => {
                         <input type="password" className="form-control" placeholder="..." id="password"></input>
                     </div>
                     <div id="log-btns" className="col-11 col-sm-11 col-md-6 col-lg-5 col-xl-4">
-                        <button id="registerWithEmail" className="btn" type="submit"> Registrarse con correo electrónico </button>
+                        <button onClick={ newAccount } id="registerWithEmail" className="btn"> Registrarse con correo electrónico </button>
                         <button id="registerWithGoogle" className="btn" type="submit"><img src="src/Images/logo-google.png"></img> Registrarse con Google </button>
                     </div>
                 </form>
@@ -36,4 +77,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+// export default Register;
