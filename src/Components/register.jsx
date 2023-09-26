@@ -2,15 +2,24 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 import React from 'react';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-
+import { auth } from "../lib/firebase";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    GoogleAuthProvider,
+    signInWithPopup,
+} from "firebase/auth";
 
 
 export default function Register() {
 
     const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    const navigate = useNavigate();
 
+    //REGISTRO CON CORREO Y CONTRASEÑA
     const newAccount = (email, password) => {
 
         const emailInput = document.getElementById('email').value;
@@ -46,6 +55,33 @@ export default function Register() {
         }
     }
 
+    //REGISTRO CON GOOGLE -REDIRECT-
+    const accessWithGoogle = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            // eslint-disable-next-line no-console
+            console.log(credential);
+            // navigate('/Wall');s
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            const email = error.email;
+            const credential = GoogleAuthProvider.credentialFromError(error);
+            console.log('error signing up with Google');
+            // ...
+          });
+      };
+
+
+
+
+
+
+
+
     return (
         <>
             <ToastContainer
@@ -66,8 +102,8 @@ export default function Register() {
                         <input type="password" className="form-control" placeholder="..." id="password"></input>
                     </div>
                     <div id="log-btns" className="col-11 col-sm-11 col-md-6 col-lg-5 col-xl-4">
-                        <button onClick={ newAccount } id="registerWithEmail" className="btn"> Registrarse con correo electrónico </button>
-                        <button id="registerWithGoogle" className="btn" type="submit"><img src="src/Images/logo-google.png"></img> Registrarse con Google </button>
+                        <button onClick={newAccount} id="registerWithEmail" className="btn"> Registrarse con correo electrónico </button>
+                        <button onClick={accessWithGoogle} id="registerWithGoogle" className="btn"><img src="src/Images/logo-google.png"></img> Registrarse con Google </button>
                     </div>
                 </form>
             </div>

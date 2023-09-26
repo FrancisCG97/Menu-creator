@@ -8,9 +8,9 @@ import {
 } from "react-router-dom";
 import Home from './Home.jsx'
 import Wall from './Wall.jsx';
+import RegisterPage from "./RegisterPage.jsx";
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import RegisterPage from "./RegisterPage.jsx";
 
 const router = createBrowserRouter([
   {
