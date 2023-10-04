@@ -1,14 +1,14 @@
 /* -----------------ROOT----------------- */
 :root {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 0%;
   background-color: #D4E2B6;
 }
 
 body {
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #D4E2B6;
   margin: 0%;
 }
@@ -20,6 +20,7 @@ body {
 nav {
   display: flex;
   justify-content: center;
+  background-color: #D4E2B6;
 }
 
 #header {
@@ -130,7 +131,7 @@ h1 {
 }
 
 #register-container {
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   background-color: #D4E2B6;
@@ -171,6 +172,125 @@ h1 {
   font-size: 50px;
   font-weight: 600;
 }
+
+
+
+
+
+
+
+
+
+/* -----------------WALL----------------- */
+/* -----------------TITLE----------------- */
+h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 100%;
+  color: black;
+  width: 100vw;
+  margin: 0%;
+  padding: 20px 0px 0px 0px;
+  background-color: #D4E2B6;
+}
+
+button {
+  border-radius: 20px;
+}
+
+#info-inputs {
+  padding-left: 20px;
+  display: flex;
+  align-items: flex-start;
+  background-color: #D4E2B6;
+}
+
+#option-input {
+  margin-right: 10px;
+  background-color: #F0F6E7;
+  border-radius: 5px;
+  border: 2px solid #539FA2;
+}
+
+#menu {
+  width: 100vw;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  background-color: #D4E2B6;
+}
+
+#menu-title {
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 250%;
+  font-weight: bold;
+  color: #539FA2;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+#option {
+  width: 95%;
+  margin: 0%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#clean-option {
+  width: fit-content;
+  padding: 8px;
+  background-color: #FF7474;
+  border: 2px solid #FE3939;
+  border-radius: 5px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 120%;
+  font-weight: 900;
+}
+
+#add-see {
+  padding: 25px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#add-see-btn {
+  width: 40%;
+  background-color: #ABCCB1;
+  border: 2px solid #539FA2;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 100%;
+  font-weight: 900;
+}
+
+#clean {
+  display: flex;
+  justify-content: center;
+}
+
+#clean-btn {
+  width: 70%;
+  background-color: #FF7474;
+  border: 2px solid #FE3939;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 110%;
+  font-weight: 900;
+}
+
+#menu-btn {
+  background-color: #D4E2B6;
+}
+
+
+
+
+
+
 
 
 

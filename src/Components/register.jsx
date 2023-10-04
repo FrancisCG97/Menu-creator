@@ -16,7 +16,6 @@ import {
 export default function Register() {
 
     const auth = getAuth();
-    const provider = new GoogleAuthProvider();
     const navigate = useNavigate();
 
     //REGISTRO CON CORREO Y CONTRASEÑA
@@ -61,9 +60,8 @@ export default function Register() {
         signInWithPopup(auth, provider)
           .then((result) => {
             const credential = GoogleAuthProvider.credentialFromResult(result);
-            // eslint-disable-next-line no-console
             console.log(credential);
-            // navigate('/Wall');s
+            navigate('/Wall');
           })
           .catch((error) => {
             const errorCode = error.code;
@@ -74,12 +72,6 @@ export default function Register() {
             // ...
           });
       };
-
-
-
-
-
-
 
 
     return (

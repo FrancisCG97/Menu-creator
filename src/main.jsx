@@ -6,7 +6,7 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-import Home from './Home.jsx'
+// import Home from './Home.jsx'
 import Wall from './Wall.jsx';
 import RegisterPage from "./RegisterPage.jsx";
 import './App.css'
@@ -15,16 +15,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Wall />,
   },
   {
     path: "/RegisterPage",
     element: <RegisterPage />,
   },
-  {
-    path: "/Wall",
-    element: <Wall />,
-  },
+  // {
+  //   path: "/Wall",
+  //   element: <Wall />,
+  // },
 ]);
 
 
