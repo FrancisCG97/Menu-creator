@@ -2,12 +2,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
 
-function Options() {
-
-    const navigate = useNavigate();
+function Generator() {
 
     const [inputValue, setInputValue] = useState('');
     const [pdfContent, setPdfContent] = useState('');
@@ -21,7 +18,6 @@ function Options() {
         const doc = new jsPDF();
         doc.text(inputValue, 10, 10);
         setPdfContent(doc.output('dataurlstring'));
-        navigate('/PdfView');
     };
 
     console.log("funciona generador");
@@ -31,12 +27,12 @@ function Options() {
 
     return (
         <>
-            <div id="menu" className="container">
+            <div id="pdf" className="container">
                 <div className="row">
-                    <div id="menu-container" className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div id="pdf-container" className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <nav className="navbar">
                             <div id="nav-container" className="container">
-                                <h1 id="menu-title" className="navbar-brand"> Crea tu menú ⬇ </h1>
+                                <h1 id="pdf-title" className="navbar-brand"> Aquí está tu menú ⬇ </h1>
                             </div>
                         </nav>
                     </div>
@@ -93,4 +89,4 @@ function Options() {
     )
 }
 
-export default Options;
+export default Generator;
